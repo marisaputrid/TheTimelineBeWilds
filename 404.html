@@ -40,6 +40,7 @@ h2 {
   cursor: pointer;
 }
 
+/* VIDEO */
 video {
   position: fixed;
   inset: 0;
@@ -51,6 +52,7 @@ video {
   z-index: 10;
 }
 
+/* ADS */
 .ads {
   position: fixed;
   bottom: 15px;
@@ -88,11 +90,6 @@ sections. As curiosity grew, more users began reposting the link, causing rapid 
 growth.
 </p>
 
-<p>
-Digital media experts explain that content with limited previews often performs better.
-When viewers feel there is more to uncover, engagement increases naturally.
-</p>
-
 <h2>Why Watching the Full Video Matters</h2>
 
 <p>
@@ -105,25 +102,11 @@ By watching the complete version, audiences gain a clearer understanding of the 
 the sequence, and the overall message presented in the video.
 </p>
 
-<h2>Public Reactions and Online Discussion</h2>
-
-<p>
-Reactions have been mixed. Some viewers express surprise, while others focus on analyzing
-specific moments. This diversity of opinion has fueled ongoing discussions across
-multiple platforms.
-</p>
-
-<p>
-Many users emphasize the importance of responsible viewing and encourage others not to
-judge content based solely on short clips.
-</p>
-
 <h2>Final Thoughts</h2>
 
 <p>
-This viral video continues to attract attention because it offers something many clips
-do not: full context. Watching the complete version allows viewers to form their own
-balanced and informed opinions.
+This video continues to attract attention because it offers something many clips do not:
+full context. Responsible viewing helps audiences form informed opinions.
 </p>
 
 <button id="watchBtn">▶ CONTINUE TO FULL VIDEO</button>
@@ -131,11 +114,18 @@ balanced and informed opinions.
 </div>
 
 <!-- ===== VIDEO PLAYER ===== -->
-<video id="videoPlayer" controls playsinline preload="metadata">
+<video id="videoPlayer"
+  controls
+  controlsList="nodownload noplaybackrate"
+  disablePictureInPicture
+  playsinline
+  preload="metadata">
+
   <source id="videoSrc" src="" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
-<!-- ===== BANNER ADS ===== -->
+<!-- ===== ADS ===== -->
 <div class="ads" id="adsBox">
 <script>
   atOptions = {
@@ -150,7 +140,7 @@ balanced and informed opinions.
 </div>
 
 <script>
-// ===== VIDEO CDN LIST (JUST REPLACE LINKS) =====
+// ===== VIDEO CDN LIST (JUST EDIT LINKS) =====
 const videoList = [
   "https://cdn.videy.co/A0Yf65Vh1.mp4",
   "https://cdn.videy.co/X5QsDvl31.mp4",
@@ -158,16 +148,20 @@ const videoList = [
   "https://cdn.videy.co/1OYHHfpL1.mp4"
 ];
 
-// random video
+// pick random video
 const selectedVideo = videoList[Math.floor(Math.random() * videoList.length)];
 
 document.getElementById("watchBtn").onclick = function () {
   document.getElementById("article").style.display = "none";
+
+  const video = document.getElementById("videoPlayer");
   document.getElementById("videoSrc").src = selectedVideo;
-  document.getElementById("videoPlayer").style.display = "block";
+
+  video.style.display = "block";
   document.getElementById("adsBox").style.display = "block";
-  document.getElementById("videoPlayer").load();
-  document.getElementById("videoPlayer").play();
+
+  video.load();
+  video.play();
 };
 </script>
 
