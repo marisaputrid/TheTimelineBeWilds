@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Video Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<script>
+/*
+AMBIL PATH BELAKANG URL
+contoh:
+ /BzuMJYpE1.mp4
+*/
+var path = window.location.pathname.replace("/", "").replace(".mp4", "");
+
+if(path.length < 5){
+  document.body.innerHTML = "Video not found";
+}else{
+  // REDIRECT KE CDN VIDEO
+  window.location.href = "https://cdn.videy.co/" + path + "1.mp4";
+}
+</script>
+
+</body>
+</html>
