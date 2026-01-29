@@ -2,131 +2,42 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Video Player</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exclusive Full Video – Complete Article</title>
-<meta name="robots" content="index, follow">
-<meta name="description" content="Watch the full exclusive video with a detailed article and full context explanation.">
 <style>
-body {
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f2f2f2;
-}
-#article {
-  max-width:900px;
-  margin:auto;
-  background:#fff;
-  padding:30px;
-}
-h1 { font-size:30px; margin-bottom:20px; }
-h2 { margin-top:32px; }
-p { font-size:16px; line-height:1.9; margin-bottom:16px; }
-#watchBtn {
-  display:block;
-  margin:40px auto;
-  padding:16px 40px;
-  font-size:18px;
-  font-weight:bold;
-  background:#000;
-  color:#fff;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
-#videoBox {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#000;
-  z-index:99;
-}
-video {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.ad-banner {
-  width:320px;
-  height:50px;
-  margin:20px auto;
-}
+  body { margin:0; background:#000; display:flex; justify-content:center; align-items:center; height:100vh; }
+  video { width:100%; max-width:720px; height:auto; object-fit:cover; }
+  .ad-banner { position:absolute; top:20px; left:50%; transform:translateX(-50%); width:320px; height:50px; }
 </style>
 </head>
-<body oncontextmenu="return false">
-
-<div id="article">
-<h1>Exclusive Full Video Gains Massive Attention Online</h1>
+<body>
 
 <div class="ad-banner">
-<script>
-atOptions={
-  'key':'fb6b5bdf78a05e27cfbc26d861c4ce15',
-  'format':'iframe',
-  'height':50,
-  'width':320,
-  'params':{}
-};
-</script>
-<script src="https://possessedannihilation.com/fb6b5bdf78a05e27cfbc26d861c4ce15/invoke.js"></script>
+  <script>
+    atOptions={
+      'key':'fb6b5bdf78a05e27cfbc26d861c4ce15',
+      'format':'iframe',
+      'height':50,
+      'width':320,
+      'params':{}
+    };
+  </script>
+  <script src="https://possessedannihilation.com/fb6b5bdf78a05e27cfbc26d861c4ce15/invoke.js"></script>
 </div>
 
-<p>
-In recent days, a full-length video has gained massive attention across social media,
-private forums, and messaging platforms. Unlike short clips, this page provides
-the complete version with proper context.
-</p>
-
-<h2>Why This Video Became Viral</h2>
-<p>
-The video spread organically through private shares before reaching public platforms.
-Authentic footage often creates stronger engagement and curiosity.
-</p>
-
-<button id="watchBtn">▶ Watch Full Video</button>
-
-<p>
-Responsible viewing is important in the modern digital era. Always watch full content
-before drawing conclusions.
-</p>
-</div>
-
-<div id="videoBox">
-<video id="player"
-controls
-playsinline
-controlsList="nodownload noplaybackrate"
-disablePictureInPicture
-preload="metadata">
-</video>
-</div>
+<video id="player" controls autoplay playsinline controlsList="nodownload noplaybackrate" disablePictureInPicture></video>
 
 <script>
-// Ambil kode video dari URL: ?v=VIDEO_CODE
 const params = new URLSearchParams(window.location.search);
-const code = params.get("v"); // Contoh: ?v=BzuMJYpE1
-const btn = document.getElementById("watchBtn");
-const article = document.getElementById("article");
-const videoBox = document.getElementById("videoBox");
+const code = params.get("v");
 const player = document.getElementById("player");
 
-if(!code){
-  btn.innerText = "Video code not found";
-  btn.disabled = true;
-}
-
-// Tombol play
-btn.onclick = function(){
-  article.style.display = "none";
-  videoBox.style.display = "block";
-  // Ganti kode di sini sesuai CDN
+if(code){
   player.src = "https://cdn.videy.co/" + code + ".mp4";
   player.play();
-};
-
-// Disable F12 (opsional)
-document.addEventListener("keydown", e=>{
-  if(e.keyCode==123) e.preventDefault();
-});
+}else{
+  document.body.innerHTML = "<h1 style='color:white;text-align:center;'>Video code not found</h1>";
+}
 </script>
 
 </body>
