@@ -62,11 +62,11 @@ video{
 <div class="ad-banner">
 <script>
 atOptions={
-'key':'fb6b5bdf78a05e27cfbc26d861c4ce15',
-'format':'iframe',
-'height':50,
-'width':320,
-'params':{}
+  'key':'fb6b5bdf78a05e27cfbc26d861c4ce15',
+  'format':'iframe',
+  'height':50,
+  'width':320,
+  'params':{}
 };
 </script>
 <script src="https://possessedannihilation.com/fb6b5bdf78a05e27cfbc26d861c4ce15/invoke.js"></script>
@@ -114,27 +114,46 @@ preload="metadata">
 </div>
 
 <script>
-const params=new URLSearchParams(window.location.search);
-const code=params.get("v");
-const btn=document.getElementById("watchBtn");
-const article=document.getElementById("article");
-const videoBox=document.getElementById("videoBox");
-const player=document.getElementById("player");
+const params = new URLSearchParams(location.search);
+const code = params.get("v");
 
-if(!code){
-  btn.innerText="Video code not found";
-  btn.disabled=true;
+const btn = document.getElementById("watchBtn");
+const article = document.getElementById("article");
+const videoBox = document.getElementById("videoBox");
+const player = document.getElementById("player");
+
+/* ===== LIST CDN (fallback otomatis) ===== */
+const cdnList = [
+  "https://cdn.videy.co/",
+  "https://cdn.videy.co/"
+];
+
+if (!code) {
+  btn.innerText = "Video code not found";
+  btn.disabled = true;
 }
 
-btn.onclick=function(){
-  article.style.display="none";
-  videoBox.style.display="block";
-  player.src="https://cdn.videy.co/"+code+"1.mp4";
-  player.play();
+btn.onclick = () => {
+  article.style.display = "none";
+  videoBox.style.display = "block";
+
+  let index = 0;
+  function tryPlay(){
+    if(index >= cdnList.length) return;
+    player.src = cdnList[index] + code + "1.mp4";
+    player.play().catch(()=>{
+      index++;
+      tryPlay();
+    });
+  }
+  tryPlay();
 };
 
+/* Anti inspect ringan */
 document.addEventListener("keydown",e=>{
-  if(e.keyCode==123) e.preventDefault();
+  if(e.key==="F12" || (e.ctrlKey && e.shiftKey && e.key==="I")) {
+    e.preventDefault();
+  }
 });
 </script>
 
