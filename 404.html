@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exclusive Full Video – Complete Version</title>
+
+<title>Exclusive Full Video – Complete Context & Explanation</title>
 
 <meta name="robots" content="index, follow">
-<meta name="description" content="Watch the exclusive full video with a complete article explaining the background, context, and public reactions. Full version available responsibly.">
+<meta name="description" content="Watch the exclusive full video with a complete article and clear explanation. Full context, responsible viewing, and detailed discussion.">
 
 <style>
 body{
@@ -14,19 +15,36 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   background:#f2f2f2;
 }
+
+/* ARTICLE */
 #article{
   max-width:900px;
   margin:auto;
   background:#fff;
   padding:30px;
-  line-height:1.9;
+  color:#111;
 }
-h1{font-size:30px;}
-h2{margin-top:35px;}
+
+#article h1{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+#article h2{
+  font-size:22px;
+  margin-top:36px;
+}
+
+#article p{
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
 #watchBtn{
   display:block;
   margin:40px auto;
-  padding:18px 45px;
+  padding:18px 46px;
   font-size:18px;
   font-weight:bold;
   background:#000;
@@ -35,27 +53,30 @@ h2{margin-top:35px;}
   border-radius:6px;
   cursor:pointer;
 }
+
+/* VIDEO */
 #videoWrapper{
   display:none;
   position:fixed;
   inset:0;
   background:#000;
-  z-index:999;
+  z-index:50;
 }
+
 video{
   width:100%;
   height:100%;
   object-fit:cover;
 }
-.video-banner{
+
+/* BANNER IKLAN */
+#adBanner{
   display:none;
   position:fixed;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  width:320px;
-  height:50px;
-  z-index:1000;
+  z-index:60;
 }
 </style>
 </head>
@@ -65,127 +86,130 @@ video{
 <div id="article">
 <h1>Exclusive Full Video Gains Massive Attention Online</h1>
 
-<p>
-In recent days, an exclusive full-length video has attracted widespread attention across various online platforms. 
-Unlike short clips or edited previews circulating on social media, this page provides access to the complete version 
-along with detailed written context.
-</p>
-
-<p>
-Many viral moments lose their meaning when viewed without background information. 
-This article was created to ensure viewers understand the situation fully and responsibly.
-</p>
-
-<h2>Why This Video Is Trending</h2>
-
-<p>
-The rapid spread of this content is largely due to organic sharing. 
-Early viewers shared the video privately before it reached larger audiences, 
-leading to natural discussions and curiosity-driven traffic.
-</p>
-
-<p>
-Experts note that authentic, unedited content often performs better than heavily cut clips. 
-Viewers tend to trust full versions more, especially when context is provided clearly.
-</p>
-
-<h2>Importance of Watching the Full Version</h2>
-
-<p>
-Short previews can be misleading. 
-Important details are often removed, causing misunderstandings and speculation.
-Watching the complete version allows viewers to see the full sequence of events.
-</p>
-
-<p>
-This helps reduce misinformation and promotes informed discussion rather than emotional reactions.
-</p>
-
-<h2>Public Reactions</h2>
-
-<p>
-Public opinion has been mixed. 
-Some viewers express surprise, while others analyze specific moments in detail.
-Discussions continue to grow as more people access the full video.
-</p>
-
-<p>
-Responsible viewing is encouraged. 
-Always consider the full context before forming conclusions.
-</p>
-
 <button id="watchBtn">▶ Watch Full Video</button>
+
+<p>
+Over the past few days, an exclusive full-length video has rapidly attracted attention
+across multiple online platforms. Unlike short clips that circulate without context,
+this page provides access to the complete footage accompanied by a detailed article.
+</p>
+
+<p>
+Many viral videos often create confusion because viewers only see fragments of the
+original content. This article exists to give full background, explanation, and
+responsible insight into why this video became widely discussed.
+</p>
+
+<h2>How the Video Started Trending</h2>
+
+<p>
+The video initially spread through private sharing before gradually reaching a wider
+audience. As discussions increased, curiosity grew naturally without heavy promotion.
+Organic sharing played a major role in its popularity.
+</p>
+
+<p>
+Experts suggest that content spreads faster when viewers believe it is authentic and
+unfiltered. This video appears largely untouched, which increases trust and engagement.
+</p>
+
+<h2>Why Full Context Matters</h2>
+
+<p>
+Short clips often remove essential details that help viewers understand the situation.
+Watching the full version prevents misunderstandings and reduces false assumptions.
+</p>
+
+<p>
+Responsible viewers are encouraged to analyze content completely before forming opinions.
+This helps maintain a healthier digital environment.
+</p>
+
+<h2>Public Response</h2>
+
+<p>
+Online reactions vary widely. Some viewers focus on emotional responses, while others
+analyze specific details shown throughout the video. Discussions continue to grow as
+more people watch the full version.
+</p>
+
+<h2>Final Thoughts</h2>
+
+<p>
+This page is designed to provide both the full video and a meaningful explanation.
+Viewers are encouraged to watch responsibly and consider the full context presented.
+</p>
 </div>
 
 <!-- VIDEO -->
 <div id="videoWrapper">
-  <video id="videoPlayer"
-    muted
-    playsinline
-    preload="metadata"
-    controls
-    controlsList="nodownload noplaybackrate"
-    disablePictureInPicture
-    oncontextmenu="return false;">
-  </video>
+<video id="videoPlayer"
+  controls
+  controlsList="nodownload noplaybackrate"
+  disablePictureInPicture
+  playsinline
+  preload="metadata">
+</video>
 </div>
 
-<!-- BANNER AD -->
-<a href="https://example-ad-link.com" target="_blank" class="video-banner" id="adBanner">
-  <div></div>
-</a>
+<!-- IKLAN -->
+<div id="adBanner">
+<script>
+  atOptions = {
+    'key' : 'fb6b5bdf78a05e27cfbc26d861c4ce15',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://possessedannihilation.com/fb6b5bdf78a05e27cfbc26d861c4ce15/invoke.js"></script>
+</div>
 
 <script>
-// ================= VIDEO CDN LIST =================
+// ===== CDN VIDEO (TINGGAL GANTI) =====
 const videoList = [
   "https://cdn.videy.co/A0Yf65Vh1.mp4",
   "https://cdn.videy.co/X5QsDvl31.mp4",
   "https://cdn.videy.co/6GyhccQe1.mp4",
   "https://cdn.videy.co/1OYHHfpL1.mp4"
-   " https://cdn.videy.co/rgkt4fmt1.mp4 "
 ];
 
 // pilih video (0–3)
 const selectedVideo = 0;
 
-// ==================================================
 const watchBtn = document.getElementById("watchBtn");
 const article = document.getElementById("article");
 const videoWrapper = document.getElementById("videoWrapper");
 const video = document.getElementById("videoPlayer");
 const banner = document.getElementById("adBanner");
 
-// set video source
+// set video
 video.src = videoList[selectedVideo];
 
-// delay sebelum play
-watchBtn.onclick = function(){
-  watchBtn.innerText = "Loading video...";
-  watchBtn.disabled = true;
-
-  setTimeout(()=>{
-    article.style.display = "none";
-    videoWrapper.style.display = "block";
-    banner.style.display = "block";
-    video.play();
-  }, 3000); // jeda 3 detik
+// KLIK TOMBOL = LANGSUNG PLAY (TANPA JEDA)
+watchBtn.onclick = ()=>{
+  article.style.display="none";
+  videoWrapper.style.display="block";
+  banner.style.display="block";
+  video.play();
 };
 
-// klik video = play/pause
+// klik video = play / pause
 video.addEventListener("click", ()=>{
   if(video.paused) video.play();
   else video.pause();
 });
 
-// disable right click (GLOBAL)
-document.addEventListener("contextmenu", e => e.preventDefault());
+// blok klik kanan
+document.addEventListener("contextmenu", e=>e.preventDefault());
 
-// block inspect shortcuts
+// blok inspect
 document.addEventListener("keydown", e=>{
   if(
-    e.keyCode === 123 ||
-    (e.ctrlKey && e.shiftKey && e.keyCode === 73) ||
-    (e.ctrlKey && e.keyCode === 85)
+    e.keyCode===123 ||
+    (e.ctrlKey && e.shiftKey && e.keyCode===73) ||
+    (e.ctrlKey && e.keyCode===85)
   ){
     e.preventDefault();
   }
