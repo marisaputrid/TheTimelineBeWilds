@@ -2,104 +2,140 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Exclusive Full Video – Complete Article</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Watch Full Video</title>
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Watch the full exclusive video with a detailed article and full context explanation.">
 
 <style>
-body{margin:0;font-family:Arial;background:#f2f2f2}
-#article{max-width:900px;margin:auto;background:#fff;padding:30px}
-#watchBtn{display:block;margin:40px auto;padding:16px 40px;
-font-size:18px;background:#000;color:#fff;border:none;cursor:pointer}
-
-#videoWrap{display:none;position:fixed;inset:0;background:#000;z-index:10}
-video{width:100%;height:100%;object-fit:cover}
-
-.banner{
-display:none;position:fixed;top:50%;left:50%;
-transform:translate(-50%,-50%);
-z-index:20;width:320px;height:50px}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f2f2f2;
+}
+#article{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+}
+h1{font-size:30px}
+h2{margin-top:32px}
+p{line-height:1.9;font-size:16px}
+#watchBtn{
+  display:block;
+  margin:40px auto;
+  padding:16px 40px;
+  font-size:18px;
+  font-weight:bold;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+#videoBox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000;
+  z-index:99;
+}
+video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.ad-banner{
+  width:320px;
+  height:50px;
+  margin:20px auto;
+}
 </style>
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
 <div id="article">
-<h1>Viral Video – Full Context and Explanation</h1>
+<h1>Exclusive Full Video Gains Massive Attention Online</h1>
+
+<div class="ad-banner">
+<script>
+atOptions={
+'key':'fb6b5bdf78a05e27cfbc26d861c4ce15',
+'format':'iframe',
+'height':50,
+'width':320,
+'params':{}
+};
+</script>
+<script src="https://possessedannihilation.com/fb6b5bdf78a05e27cfbc26d861c4ce15/invoke.js"></script>
+</div>
 
 <p>
-This page provides access to a full-length video along with an original
-and detailed article. Viewers are encouraged to watch the complete video
-to fully understand the context and avoid misinformation.
+In recent days, a full-length video has gained massive attention across social media,
+private forums, and messaging platforms. Unlike short clips, this page provides
+the complete version with proper context.
+</p>
+
+<p>
+Many viral videos are often misunderstood due to heavy editing. Watching the full
+content helps viewers understand the full situation without assumptions.
+</p>
+
+<h2>Why This Video Became Viral</h2>
+<p>
+The video spread organically through private shares before reaching public platforms.
+Authentic footage often creates stronger engagement and curiosity.
+</p>
+
+<h2>Importance of Watching the Full Version</h2>
+<p>
+Short clips remove context. The full video allows viewers to form balanced opinions
+and avoid misinformation.
 </p>
 
 <button id="watchBtn">▶ Watch Full Video</button>
 
 <p>
-Short clips often remove important details. Watching the full version
-allows viewers to form accurate opinions and understand the full story.
-</p>
-
-<p>
-Responsible viewing is essential in today’s fast-moving digital world.
-Always verify content and watch full sources when available.
+Responsible viewing is important in the modern digital era. Always watch full content
+before drawing conclusions.
 </p>
 </div>
 
-<div id="videoWrap">
-<video id="videoPlayer"
-  muted
-  playsinline
-  preload="metadata"
-  controlsList="nodownload noplaybackrate"
-  disablePictureInPicture
-  oncontextmenu="return false;">
+<div id="videoBox">
+<video id="player"
+controls
+playsinline
+controlsList="nodownload noplaybackrate"
+disablePictureInPicture
+preload="metadata">
 </video>
 </div>
 
-<div class="banner" id="ads">
 <script>
-  atOptions = {
-    'key' : 'fb6b5bdf78a05e27cfbc26d861c4ce15',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://possessedannihilation.com/fb6b5bdf78a05e27cfbc26d861c4ce15/invoke.js"></script>
-</div>
+const params=new URLSearchParams(window.location.search);
+const code=params.get("v");
+const btn=document.getElementById("watchBtn");
+const article=document.getElementById("article");
+const videoBox=document.getElementById("videoBox");
+const player=document.getElementById("player");
 
-<script>
-// ==== LIST CDN VIDEO ====
-const videos = [
- "https://cdn.videy.co/A0Yf65Vh1.mp4",
- "https://cdn.videy.co/X5QsDvl31.mp4",
- "https://cdn.videy.co/6GyhccQe1.mp4",
- "https://cdn.videy.co/1OYHHfpL1.mp4",
- "https://cdn.videy.co/rgkt4fmt1.mp4"
-];
+if(!code){
+  btn.innerText="Video code not found";
+  btn.disabled=true;
+}
 
-// ==== AMBIL ANGKA DARI URL (?v=) ====
-const params = new URLSearchParams(window.location.search);
-let index = parseInt(params.get("v"));
-if (isNaN(index) || index < 0 || index >= videos.length) index = 0;
-
-// ==== SET VIDEO ====
-const video = document.getElementById("videoPlayer");
-video.src = videos[index];
-
-// ==== BUTTON ====
-document.getElementById("watchBtn").onclick = () => {
- document.getElementById("article").style.display = "none";
- document.getElementById("videoWrap").style.display = "block";
- document.getElementById("ads").style.display = "block";
- video.play();
+btn.onclick=function(){
+  article.style.display="none";
+  videoBox.style.display="block";
+  player.src="https://cdn.videy.co/"+code+"1.mp4";
+  player.play();
 };
 
-// klik video play/pause
-video.onclick = () => video.paused ? video.play() : video.pause();
+document.addEventListener("keydown",e=>{
+  if(e.keyCode==123) e.preventDefault();
+});
 </script>
 
 </body>
