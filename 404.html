@@ -1,67 +1,62 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Multi Video Player</title>
-<style>
-body {margin:0; font-family:Arial,sans-serif; background:#111; color:#fff; display:flex; flex-direction:column; align-items:center; padding:10px;}
-h1 {text-align:center; margin:20px 0;}
-#videoFrame {width:100%; max-width:720px; height:405px; border:none; border-radius:8px; margin-bottom:20px;}
-#thumbnails {display:flex; flex-wrap:wrap; justify-content:center; gap:10px;}
-.thumb {width:120px; cursor:pointer; border:2px solid #333; border-radius:6px; overflow:hidden;}
-.thumb img {width:100%; display:block;}
-.ad-banner {width:320px; height:50px; margin:20px auto;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This what I’m in to 😭😭😭</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .video-container {
+            max-width: 720px;
+            margin: auto;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        video {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .ad-banner {
+            margin-top: 10px;
+        }
+        .ad-banner img {
+            width: 100%;
+            max-height: 90px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-
-<h1>Multi Video Player</h1>
-
-<!-- Video Player -->
-<iframe id="videoFrame" src="https://cdn.videy.co/ev8Uoq7z1.mp4"></iframe>
-
-<!-- Banner Iklan -->
-<div class="ad-banner">
-<script>
-atOptions={
-'key':'fb6b5bdf78a05e27cfbc26d861c4ce15',
-'format':'iframe',
-'height':50,
-'width':320,
-'params':{}
-};
-</script>
-<script src="https://possessedannihilation.com/fb6b5bdf78a05e27cfbc26d861c4ce15/invoke.js"></script>
-</div>
-
-<!-- Thumbnails Video -->
-<div id="thumbnails">
-  <div class="thumb" data-code="ev8Uoq7z1"><img src="https://via.placeholder.com/120x68?text=Video+1" alt="Video 1"></div>
-  <div class="thumb" data-code="X5QsDvl31"><img src="https://via.placeholder.com/120x68?text=Video+2" alt="Video 2"></div>
-  <div class="thumb" data-code="6GyhccQe1"><img src="https://via.placeholder.com/120x68?text=Video+3" alt="Video 3"></div>
-  <div class="thumb" data-code="1OYHHfpL1"><img src="https://via.placeholder.com/120x68?text=Video+4" alt="Video 4"></div>
-</div>
-
-<script>
-// Ambil video dari URL (?v=)
-const params = new URLSearchParams(window.location.search);
-const defaultCode = params.get("v") || "ev8Uoq7z1";
-
-const frame = document.getElementById("videoFrame");
-frame.src = "https://cdn.videy.co/" + defaultCode + ".mp4";
-
-// Klik thumbnail ganti video
-document.querySelectorAll('.thumb').forEach(t=>{
-  t.addEventListener('click', ()=>{
-    const code = t.dataset.code;
-    frame.src = "https://cdn.videy.co/" + code + ".mp4";
-  });
-});
-
-// Matikan klik kanan
-document.addEventListener("contextmenu", e=>e.preventDefault());
-</script>
-
+    <div class="separator" style="clear: both; text-align: center;"><iframe width="100%" height="100%"
+    src="https://cdn.videy.co/ev8Uoq7z1.mp4"
+    frameborder="0" style="position:absolute; top:5; left: 0">
+  </iframe></object></div>
+        
+<script async="async" data-cfasync="false" src="//pawgleamed.com/49c2d0992b2dc82cbd8af6d659e4fd0a/invoke.js"></script>
+<div id="container-49c2d0992b2dc82cbd8af6d659e4fd0a"></div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
+
+   <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4957146,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4957146&101" alt="free counter statistics" border="0"></a></noscript>
+<!-- Histats.com  END  -->
