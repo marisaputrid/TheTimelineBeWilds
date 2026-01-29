@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Video Player</title>
+<meta name="robots" content="index,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+html,body{
+  margin:0;
+  width:100%;
+  height:100%;
+  background:#000;
+}
+video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+</style>
+</head>
+<body>
+
+<video id="player" controls autoplay playsinline></video>
+
+<script>
+// ======================
+// AMBIL KODE DARI URL
+// ======================
+let code = location.pathname.split('/').pop().replace('.mp4','');
+
+// ======================
+// LIST VIDEO (FIX)
+// ======================
+let videos = {
+  "A0Yf65Vh1": "https://cdn.videy.co/A0Yf65Vh1.mp4",
+  "X5QsDvl31": "https://cdn.videy.co/X5QsDvl31.mp4",
+  "6GyhccQe1": "https://cdn.videy.co/6GyhccQe1.mp4",
+  "1OYHHfpL1": "https://cdn.videy.co/1OYHHfpL1.mp4"
+};
+
+// ======================
+// SET VIDEO
+// ======================
+if(videos[code]){
+  document.getElementById("player").src = videos[code];
+}else{
+  document.body.innerHTML =
+    "<h2 style='color:white;text-align:center;margin-top:40vh'>Video not found</h2>";
+}
+</script>
+
+</body>
+</html>
