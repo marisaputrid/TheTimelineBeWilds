@@ -3,59 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exclusive Full Video – Complete Article</title>
-<meta name="description" content="Watch the full video with detailed article and context.">
-
+<title>Full Video Article</title>
 <style>
-body {
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background:#f2f2f2;
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#f2f2f2; }
+#article { max-width:900px; margin:auto; background:#fff; padding:30px; }
+h1{font-size:28px;margin-bottom:20px;}
+p{line-height:1.8;margin-bottom:16px;}
+button#playBtn {
+  display:block; margin:20px auto; padding:14px 30px; font-size:18px; font-weight:bold;
+  background:#000; color:#fff; border:none; border-radius:6px; cursor:pointer;
 }
-#article {
-  max-width:900px;
-  margin:auto;
-  background:#fff;
-  padding:30px;
-}
-h1 { font-size:30px; margin-bottom:20px; }
-h2 { margin-top:32px; }
-p { line-height:1.9; font-size:16px; margin-bottom:16px; }
-
-button.play-btn {
-  display:block;
-  margin:40px auto;
-  padding:16px 40px;
-  font-size:18px;
-  font-weight:bold;
-  background:#000;
-  color:#fff;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
-
 #videoModal {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.95);
-  z-index:999;
-  justify-content:center;
-  align-items:center;
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,0.95);
+  z-index:999; justify-content:center; align-items:center;
 }
 #videoModal video {
-  max-width:90%;
-  max-height:90%;
+  max-width:90%; max-height:90%;
 }
-.ad-banner {
-  width:320px;
-  height:50px;
-  margin:20px auto;
-}
+.ad-banner { width:320px; height:50px; margin:20px auto; }
 </style>
 </head>
 <body oncontextmenu="return false">
+
+<button id="playBtn">▶ Play Full Video</button>
 
 <div id="article">
 <h1>Exclusive Full Video Gains Massive Attention Online</h1>
@@ -65,23 +35,8 @@ Many viral videos are often misunderstood due to heavy editing. Watching the ful
 </p>
 
  
-
 <p>
-Responsible viewing is important in the modern digital era. Always watch full content before drawing conclusions.
-</p>
-
-<h2>Why This Video Became Viral</h2>
-<p>
-The video spread organically through private shares before reaching public platforms. Authentic footage often creates stronger engagement and curiosity.
-</p>
-
-<button class="play-btn" data-video="A0Yf65Vh1">▶ Play Full Video</button>
-<button class="play-btn" data-video="X5QsDvl31">▶ Play Another Video</button>
-<button class="play-btn" data-video="6GyhccQe1">▶ Play Video 3</button>
-<button class="play-btn" data-video="1OYHHfpL1">▶ Play Video 4</button>
-
-<p>
-Enjoy the full version and share responsibly!
+Responsible viewing is important. Always watch full content before drawing conclusions.
 </p>
 </div>
 
@@ -90,29 +45,28 @@ Enjoy the full version and share responsibly!
 </div>
 
 <script>
-// modal & video player
-const modal = document.getElementById('videoModal');
-const player = document.getElementById('player');
+// ambil kode video dari URL, misal ?v=A0Yf65Vh1
+const params = new URLSearchParams(window.location.search);
+const videoCode = params.get("v") || "A0Yf65Vh1"; // default jika ?v= tidak ada
 
-document.querySelectorAll('.play-btn').forEach(btn=>{
-  btn.onclick = ()=>{
-    const code = btn.getAttribute('data-video');
-    player.src = "https://cdn.videy.co/"+code+".mp4";
-    modal.style.display = "flex";
-    player.play();
-  }
-});
+const playBtn = document.getElementById("playBtn");
+const modal = document.getElementById("videoModal");
+const player = document.getElementById("player");
 
-modal.onclick = ()=>{
-  player.pause();
-  player.src="";
-  modal.style.display="none";
+playBtn.onclick = () => {
+  player.src = "https://cdn.videy.co/" + videoCode + ".mp4";
+  modal.style.display = "flex";
+  player.play();
 };
 
-// block F12
-document.addEventListener("keydown", e=>{
-  if(e.keyCode==123) e.preventDefault();
-});
+modal.onclick = () => {
+  player.pause();
+  player.src = "";
+  modal.style.display = "none";
+};
+
+// blok F12
+document.addEventListener("keydown", e => { if(e.keyCode==123) e.preventDefault(); });
 </script>
 
 </body>
